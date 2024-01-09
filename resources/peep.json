@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Bob Taylor",
+    "email": "btaylor79@gmail.com",
+    "phone1": "919-567-5499",
+    "phone2": "456-122-8000",
+    "address": "7823 Waters Lane, Miami, Florida, 23499",
+    "note": "Close friend",
+    "userKey": 10
+  },
+  {
+    "name": "Wendy Smith",
+    "email": "sissylou@yahoo.com",
+    "phone1": "919-354-6938",
+    "phone2": "",
+    "address": "123 Dreamy Blvd, Los Angeles, CA, 90210",
+    "note": "Sister",
+    "userKey": 10
+  },
+  {
+    "name": "Don Legal",
+    "email": "dlegal@outlook.com",
+    "phone1": "800-123-8888",
+    "phone2": "800-123-8889",
+    "address": "100 Ruthless St, Detroit, MI, 39400",
+    "note": "My Lawyer",
+    "userKey": 8
+  }
+]
