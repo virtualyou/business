@@ -19,29 +19,14 @@
  */
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const peep = (sequelize: any, Sequelize: any) => {
-    return sequelize.define("peeps", {
+const member = (sequelize: any, Sequelize: any) => {
+    return sequelize.define("members", {
         name: {
-            type: Sequelize.STRING
-        },
-        phone1: {
-            type: Sequelize.STRING
-        },
-        phone2: {
             type: Sequelize.STRING
         },
         email: {
             type: Sequelize.STRING
-        },
-        address: {
-            type: Sequelize.STRING
-        },
-        note: {
-            type: Sequelize.STRING
-        },
-        userKey: {
-            type: Sequelize.INTEGER
         }
     });
 };
-export default peep;
+export default member;

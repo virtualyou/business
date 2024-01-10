@@ -7,8 +7,12 @@ ROLE authorization for use with the VirtualYou Web application.
 ### Endpoints
 #### Admin Only (ROLE_ADMIN + JWT Auth)
 - /business/v1/members POST 
+- /business/v1/members GET
+- /business/v1/members/{id} GET
+- /business/v1/members/{id} PUT
+- /business/v1/members/{id} DELETE
 
-#### No Auth
+#### No Auth (Later)
 - /api-docs Swagger API Specification
 
 **NOTE**: There will probably be more resources and endpoints however, this is the

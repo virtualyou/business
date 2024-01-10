@@ -20,7 +20,7 @@
 
 import config from "../config/config";
 import { Sequelize } from "sequelize-typescript";
-import Peep from "./peep.model";
+import Member from "./member.model";
 
 const sequelize = new Sequelize(
     config.database.db,
@@ -45,6 +45,6 @@ const db: any = {};
 db["sequelize"] = sequelize;
 db["Sequelize"] = Sequelize;
 
-db.peep = Peep(sequelize, Sequelize);
+db.member = Member(sequelize, Sequelize);
 
 export default db;

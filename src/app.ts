@@ -22,7 +22,7 @@ import express, {type Express} from "express";
 import cors from "cors";
 import * as dotenv from "dotenv";
 import db from "./models/index";
-import peepRouter from "./routes/peep.routes";
+import memberRouter from "./routes/member.routes";
 import cookieSession from "cookie-session";
 import * as process from "process";
 
@@ -60,7 +60,7 @@ app.get("/", (_req, res) => {
 });
 
 // database
-const Peep = db.peep;
+const Member = db.member;
 
 if (init) {
     db.sequelize.sync({force: true}).then(() => {
@@ -72,59 +72,20 @@ if (init) {
 }
 
 // routes
-app.use(peepRouter);
+app.use(memberRouter);
 
 // create reference role objects
 function initial() {
-    Peep.create({
-        name: "David Knoxville",
-        userKey: 1,
-        phone1: "919-888-3000",
-        phone2: "",
-        email: "me@dlwhitehurst.com",
-        address: "123 Anywhere Ln, Sampleville, ND, 23045",
-        note: "Insurance Agent"
+    Member.create({
+        name: "David",
+        email: "me@dlwhitehurst.com"
     });
 
-    Peep.create({
-        name: "Patty Brown",
-        userKey: 1,
-        phone1: "722-310-1288",
-        phone2: "",
-        email: "pbrown@schwartz.com",
-        address: "4922 Clamstrip St, Middlebury, CT, 29300",
-        note: "Good friend"
+    Member.create({
+        name: "Patty",
+        email: "whitehurst@gmail.com"
     });
 
-    Peep.create({
-        name: "Nancy Reynolds",
-        userKey: 1,
-        phone1: "800-825-9274",
-        phone2: "",
-        email: "nrey@acme.com",
-        address: "",
-        note: "Nurse"
-    });
-
-    Peep.create({
-        name: "Peggy Smith",
-        userKey: 1,
-        phone1: "892-123-7702",
-        phone2: "",
-        email: "psmith@yahoo.com",
-        address: "3456 Jaybird Ct, Gloucester Pt. VA, 23062",
-        note: "Mother in Law"
-    });
-
-    Peep.create({
-        name: "Robert Sandberg",
-        userKey: 1,
-        phone1: "877-655-2309",
-        phone2: "",
-        email: "rsandberg@gmail.com",
-        address: "",
-        note: "Jeweler"
-    });
 }
 
 export default app;
