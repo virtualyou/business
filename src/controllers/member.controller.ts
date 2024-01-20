@@ -76,7 +76,6 @@ const createMember = (req: Request, res: Response) => {
 
     // Create new Member object
     const member = {
-        name: req.body.name,
         email: req.body.email || ""
     };
 

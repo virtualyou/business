@@ -22,6 +22,7 @@ import {NextFunction, Request, Response} from "express";
 import memberController from "../controllers/member.controller";
 import authJwt from '../utility/authJwt';
 import express from 'express';
+import verifySignUp from "../utility/verifySignUp";
 
 const memberRouter = express();
 
@@ -55,7 +56,7 @@ const memberRouter = express();
     // POST - a new member
     memberRouter.post(
     "/business/v1/members",
-    [authJwt.verifyToken, authJwt.isAdmin],
+    [authJwt.verifyToken, authJwt.isAdmin, verifySignUp.checkDuplicateEmail],
     memberController.createMember
 );
     // PUT - update a member by id

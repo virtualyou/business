@@ -77,13 +77,11 @@ app.use(memberRouter);
 // create reference role objects
 function initial() {
     Member.create({
-        name: "David",
-        email: "me@dlwhitehurst.com"
+        email: "dlwhitehurst@gmail.com"
     });
 
     Member.create({
-        name: "Patty",
-        email: "whitehurst@gmail.com"
+        email: "whitehurst.patricia@gmail.com"
     });
 
 }

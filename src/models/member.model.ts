@@ -15,15 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * task.model.ts
+ * member.model.ts
  */
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const member = (sequelize: any, Sequelize: any) => {
     return sequelize.define("members", {
-        name: {
-            type: Sequelize.STRING
-        },
         email: {
             type: Sequelize.STRING
         }
