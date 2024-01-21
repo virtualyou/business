@@ -56,7 +56,7 @@ const memberRouter = express();
     // POST - a new member
     memberRouter.post(
     "/business/v1/members",
-    [authJwt.verifyToken, authJwt.isAdmin, verifySignUp.checkDuplicateEmail],
+    [verifySignUp.checkDuplicateEmail],
     memberController.createMember
 );
     // PUT - update a member by id

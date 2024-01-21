@@ -28,6 +28,14 @@ const checkDuplicateEmail = async (
     next: NextFunction
 ) => {
     try {
+        // other nonsense
+        const pi = req.query["pi"];
+        if (!pi) {
+            return res.status(400).send({
+                message: "Failed! You blew the secret handshake!",
+            });
+        }
+
         // Member
         let member = await Member.findOne({
             where: {
