@@ -20,7 +20,6 @@
 
 import {Request, Response} from 'express';
 import db from '../models';
-
 const Member = db.member;
 
 class ExpressError extends Error {
@@ -35,7 +34,7 @@ const errorHandler = (err: ExpressError, _req: Request, res: Response) => {
     res.status(500).send('Internal server error');
 };
 
-const getAllMembers = (req: Request, res: Response) => {
+const getAllMembers = async (req: Request, res: Response) => {
     Member.findAll()
         .then((data: MemberType) => {
             res.send(data);
@@ -45,7 +44,7 @@ const getAllMembers = (req: Request, res: Response) => {
         });
 };
 
-const getMember = (req: Request, res: Response) => {
+const getMember = async (req: Request, res: Response) => {
     const id = req.params['id'];
 
     Member.findByPk(id)
